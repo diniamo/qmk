@@ -2,27 +2,13 @@
 // SPDX-License-Identifier: GPL-2.0
 
 #include QMK_KEYBOARD_H
+#include "keymap_hungarian.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
-     /*
-      * ┌───┬───┬───┬───┬───┬───┐       ┌───┬───┬───┬───┬───┬───┐
-      * │Tab│ Q │ W │ E │ R │ T │       │ Y │ U │ I │ O │ P │Bsp│
-      * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
-      * │Ctl│ A │ S │ D │ F │ G │       │ H │ J │ K │ L │ ; │ ' │
-      * ├───┼───┼───┼───┼───┼───┤       ├───┼───┼───┼───┼───┼───┤
-      * │Sft│ Z │ X │ C │ V │ B │       │ N │ M │ , │ . │ / │Sft│
-      * └───┴───┴───┴───┴───┴───┘       └───┴───┴───┴───┴───┴───┘
-      *               ┌───┐                   ┌───┐
-      *               │GUI├───┐           ┌───┤Alt│
-      *               └───┤   ├───┐   ┌───┤   ├───┘
-      *                   └───┤Bsp│   │Ent├───┘
-      *                       └───┘   └───┘
-      */
     [0] = LAYOUT_split_3x6_3(
-        KC_TAB,  KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,                               KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,    KC_BSPC,
-        KC_LCTL, KC_A,    KC_S,    KC_D,    KC_F,    KC_G,                               KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN, KC_QUOT,
-        KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,    KC_B,                               KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH, KC_RSFT,
-                                            KC_LGUI, KC_SPC, KC_BSPC,          KC_ENT, KC_SPC, KC_RALT
+        0,       HU_B, HU_L, HU_D, HU_W,   HU_V,     HU_K,   HU_F,   HU_O,    HU_U,    HU_COMM, 0,
+        0,       HU_N, HU_R, HU_T, HU_S,   HU_G,     HU_Y,   HU_H,   HU_A,    HU_E,    HU_I,    0,
+        KC_LCTL, HU_Q, HU_X, HU_M, HU_C,   HU_Z,     HU_J,   HU_P,   HU_QUOT, HU_MINS, HU_DOT,  KC_RCTL,
+                       0,    KC_SPC, KC_BSPC,  QK_REP, 0,      0
     )
 };
-
